@@ -1,0 +1,46 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/python
+{
+	"name": "Python 3",
+	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
+	"image": "mcr.microsoft.com/devcontainers/python:2-3.12-bookworm",
+	"features": {
+		"ghcr.io/devcontainers-extra/features/uv:1": {},
+		"ghcr.io/devcontainers/features/github-cli:1": {},
+		"ghcr.io/devcontainers/features/docker-in-docker:2": {
+			"version": "latest",
+			"dockerDashComposeVersion": "v2"
+		}
+	},
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Mount AWS credentials from host
+	"mounts": [
+		"source=${localEnv:HOME}${localEnv:USERPROFILE}/.zsh_history,target=/home/vscode/.zsh_history,type=bind"
+	],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "sudo apt-get update && sudo apt-get install -y ffmpeg && uv sync --all-packages --all-extras && uv run pre-commit install",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"ms-python.python",
+				"ms-python.vscode-pylance",
+				"charliermarsh.ruff",
+				"amazonwebservices.aws-toolkit-vscode",
+				"github.vscode-github-actions",
+				"zhuangtongfa.material-theme",
+				"anthropic.claude-code"
+			],
+			"settings": {
+				"python.defaultInterpreterPath": ".venv/bin/python",
+				"workbench.colorTheme": "One Dark Pro Night Flat"
+			}
+		}
+	}
+	// Configure tool-specific properties.
+	// "customizations": {},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}

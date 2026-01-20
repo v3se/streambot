@@ -1,0 +1,26 @@
+[project]
+name = "streambot"
+version = "1.0.0"
+description = "Discord bot for streaming radio and YouTube audio to voice channels."
+requires-python = ">=3.12"
+dependencies = [
+    "discord.py[voice]==2.6.4",
+    "ffmpeg>=1.4",
+    "pydantic>=2.12.4",
+    "pyradios>=2.1.1",
+    "python-dotenv>=1.2.1",
+    "yt-dlp>=2025.11.12",
+]
+
+[project.optional-dependencies]
+dev = [
+    "ruff>=0.8.0",
+    "pre-commit>=4.0.0",
+]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "W", "UP"]

@@ -1,0 +1,14 @@
+# Radio Station Configuration
+# Add new stations by creating a new [[stations]] section with name and stream_url
+
+[[stations]]
+name = "BBC Radio 1"
+stream_url = "http://stream.live.vc.bbcmedia.co.uk/bbc_radio_one"
+
+[[stations]]
+name = "NPR News"
+stream_url = "https://npr-ice.streamguys1.com/live.mp3"
+
+[[stations]]
+name = "SomaFM Groove Salad"
+stream_url = "https://ice1.somafm.com/groovesalad-128-mp3"
