@@ -122,9 +122,7 @@ async def play_stream(voice_client: discord.VoiceClient, station: RadioConfig):
 
 async def change_status(bot, radio_station: RadioConfig):
     await bot.change_presence(
-        activity=discord.Activity(
-            type=discord.ActivityType.listening, name=radio_station.name
-        )
+        activity=discord.Activity(type=discord.ActivityType.listening, name=radio_station.name)
     )
 
 
