@@ -9,7 +9,7 @@ dependencies = [
     "pydantic>=2.12.4",
     "pyradios>=2.1.1",
     "python-dotenv>=1.2.1",
-    "yt-dlp>=2025.11.12",
+    "yt-dlp>=2026.02.04",
 ]
 
 [project.optional-dependencies]
